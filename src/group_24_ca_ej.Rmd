@@ -1,0 +1,20 @@
+---
+title: "Group 24 CA pollution burden"
+author: "Van Gonzales & Meghna Rao"
+date: "11/14/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(janitor)
+library(here)
+```
+
+```{r}
+ces <- read_csv(here("data", "ces3demographics.csv")) %>% 
+  clean_names()
+
+```
+
