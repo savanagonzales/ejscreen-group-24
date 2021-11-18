@@ -5,6 +5,13 @@ date: "11/14/2021"
 output: html_document
 ---
 
+## Overview
+
+The following report wrangles and visualizes data from the California Communities Environmental Health Screening Tool (CES 3.0) which identifies California communities by census tract that are disproportionately burdened by, and vulnerable to, multiple sources of pollution. The CES 3.0 provides an aggregate score that combines both pollution burden and population characteristics.
+The graph contained herein visualizes the CES 3.0 score and the percentage of white population from the 2010 Census. All analyses are in R version 4.0.2 using R studio version 1.2.1056.
+
+**Data Citation:** [Version 3.0 of the California Communities Environmental Health Screening Tool (CalEnviroScreen) released by the Office of Environmental Health Hazard Assessment (OEHHA), on behalf of the California Environmental Protection Agency (CalEPA), 2017](https://oehha.ca.gov/calenviroscreen/report/calenviroscreen-30)
+
 ```{r setup, include=FALSE, warning = FALSE, message = FALSE}
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 library(tidyverse)
@@ -25,5 +32,9 @@ ggplot(data = ces, aes(x = white_percent, y = ces_3_0_score)) +
   theme_minimal() +
     theme(plot.title = element_text(face = "bold", hjust = 0.5)) 
 ```
+<br>
 **Figure 1. Percentage of white population versus the CES Score.** As the percentage of the white population (x-axis) increases, the CES 3.0 Score (y-axis) gradually decreases. The greater the score, the greater the burden of pollution the population is facing.
+
+According to Figure 1, there is a negative correlation between the percentage of white population and the CES 3.0 score. This means that on average, as the percentage of white people in the population increases, the population is less vulnerable to multiple sources of pollution. 
+
 
